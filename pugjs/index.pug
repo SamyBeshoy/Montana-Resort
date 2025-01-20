@@ -1,0 +1,174 @@
+include mixin.pug
+doctypehtml
+html(lang="en")
+    block head
+        head
+            +head("Montana Resort")
+    body
+        block landing
+            .landing
+                nav 
+                    .boxOne 
+                        span: a(href="index.html") Home
+                        span: a(href="index.html") About
+                        span: a(href="index.html") Romes
+                        span.menu
+                            a(href="##").hov Blog <i class="fa-solid fa-caret-down"></i>
+                            div
+                                span: a(href="") Blog
+                                span: a(href="") Single-Blog
+                        span: a(href="index.html") Contact
+                    a(href="index.html"): img(src="imgs/logo.png", alt="Logo")
+                    .boxTwo
+                        <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-x-twitter"></i> <i class="fa-brands fa-instagram"></i>
+                        div#bookRoom Book a Room
+                    .sidenav#sidenav 
+                        div.parent 
+                            div.ch1
+                                a(href="index.html"): img(src="imgs/logo.png", alt="Deal Img") 
+                            div.ch2    
+                                a(href="##" class="closebtn" onclick="closeNav()") &times;
+                        div
+                            a(href="index.html") Home
+                            a(href="index.html") About
+                            a(href="index.html") Romes
+                            a(href="index.html") Blog
+                            a(href="index.html") Single-Blog
+                            a(href="index.html") Contact
+                    .boxThree
+                        <span onclick="openNav()"class="tog"><i class="fa-solid fa-bars"></i></span>
+                    .popup#popup
+                        div.formtext Check Availability
+                        form
+                            div
+                                label(for="Ckeck_In") Ckeck In Date
+                                input(type="date" id="Ckeck_In" required)
+                            div
+                                label(for="Ckeck_Out") Ckeck Out Date
+                                input(type="date" id="Ckeck_Out" required)
+                            div
+                                label(for="quantity") Adult
+                                input(type="number" id="quantity" min="0" max="5")
+                            div
+                                label(for="quantity2") Kids
+                                input(type="number" id="quantity2" min="0" max="5")
+                            span: input(type="submit", value="Check Availability").submit
+                .text 
+                    div Montana Resort
+                    div Unlock to enjoy the view of Martine
+        block about 
+            section.about
+                .container 
+                    .box
+                        .text
+                            div About Us
+                            div A Luxuries Hotel 
+                                br 
+                                | with Nature
+                            div Suscipit libero pretium nullam potenti. Interdum, blandit
+                                br
+                                | phasellus consectetuer dolor ornare dapibus enim ut 
+                                br
+                                | tincidunt rhoncus tellus sollicitudin pede nam maecenas, 
+                                br
+                                | dolor sem. Neque sollicitudin enim. Dapibus lorem feugiat 
+                                br
+                                | facilisi faucibus et. Rhoncus.
+                        .photos 
+                            div: img(src="imgs/about_1.png", alt="sea")
+                            div: img(src="imgs/about_2.png", alt="luxury")
+        block offers
+            section.offers
+                .container
+                    .text 
+                        div Our Offers
+                        div Ongoing Offers
+                    .boxs
+                        .box 
+                            div: img(src="imgs/1.png", alt="hotel")
+                            div Up to 35% savings on Club 
+                                br
+                                | rooms and Suites
+                            div Luxaries condition
+                                br
+                                | 3 Adults & 2 Children size
+                                br 
+                                | Sea view side
+                        .box 
+                            div: img(src="imgs/2.png", alt="hotel")
+                            div Up to 35% savings on Club 
+                                br
+                                | rooms and Suites
+                            div Luxaries condition
+                                br
+                                | 3 Adults & 2 Children size
+                                br 
+                                | Sea view side
+                        .box 
+                            div: img(src="imgs/3.png", alt="hotel")
+                            div Up to 35% savings on Club 
+                                br
+                                | rooms and Suites
+                            div Luxaries condition
+                                br
+                                | 3 Adults & 2 Children size
+                                br 
+                                | Sea view side
+        block ads
+            section.ads
+                .container 
+                    div Montana Sea View
+                    div Relax and Enjoy your 
+                        br
+                        | Vacation
+        block food
+            section.food
+                .container
+                    .box
+                        .photos 
+                            div: img(src="imgs/food1.png", alt="food")
+                            div: img(src="imgs/food2.png", alt="food")
+                        .text
+                            div Delicious Food
+                            div We Serve Fresh and
+                                br 
+                                | Delicious Food
+                            div Suscipit libero pretium nullam potenti. Interdum, blandit
+                                br
+                                | phasellus consectetuer dolor ornare dapibus enim ut 
+                                br
+                                | tincidunt rhoncus tellus sollicitudin pede nam maecenas, 
+                                br
+                                | dolor sem. Neque sollicitudin enim. Dapibus lorem feugiat 
+                                br
+                                | facilisi faucibus et. Rhoncus.
+        block room
+            section.room
+                .text 
+                    div Featured Rooms
+                    div Choose a Better Room
+                .gallery
+                    .boxsOne
+                        .box 
+                            div From $250/night
+                            div.big_text Superior Room
+                        .box 
+                            div From $250/night
+                            div.big_text Deluxe Room
+                    .boxsTwo
+                        .box 
+                            div From $250/night
+                            div.big_text Signature Room
+                        .box 
+                            div From $250/night
+                            div.big_text Couple Room
+        block reservation
+            section.reservation
+                .container
+                    div 
+                        span For Reservation 0r Query?
+                        a(href="tel:+10 576 377 4789") +10 576 377 4789
+        block footer
+            footer Copyright 2025 © by Beshoy Samy.
+        block scripts 
+            script(src="main.js")
