@@ -1,0 +1,49 @@
+// import variables file
+@use "variables" as *;
+.offers {
+    .container {
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            div:nth-child(1) {
+                color: $main_color;
+                font-size: $font_six;
+            }
+            div:nth-child(2) {
+                font-family: "Raleway", sans-serif;
+                font-size: $font_three;
+            }
+        }
+        .boxs {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            .box {
+                div:nth-child(1) {
+                    width: 20em;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    img {
+                        width: 100%;
+                        transition: 0.3s;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                div:nth-child(2) {
+                    font-size: $font_four;
+                    margin-bottom: 10px;
+                }
+                div:nth-child(3) {
+                    font-size: $font_six;
+                    line-height: 1.5;
+                    color: #4D4D4D;
+                }
+            }
+        }
+    }
+}

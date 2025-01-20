@@ -1,0 +1,26 @@
+// import variables file
+@use "variables" as *; 
+.ads {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/video.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    color: white;
+    padding: 100px 0;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        div:nth-child(1) {
+            font-size: $font_six;
+        }
+        div:nth-child(2) {
+            font-family: "Raleway", sans-serif;
+            font-size: $font_three;
+        }
+    }
+}

@@ -1,0 +1,102 @@
+// import variables file
+@use "variables" as *;
+.room {
+    padding-bottom: 0;
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        div:nth-child(1) {
+            color: $main_color;
+            font-size: $font_six;
+        }
+        div:nth-child(2) {
+            font-family: "Raleway", sans-serif;
+            font-size: $font_three;
+        }
+    }
+    .gallery {
+        background-color: antiquewhite;
+        color: white;
+        font-size: $font_six;
+        .big_text {
+            font-family: "Raleway", sans-serif;
+            font-size: $font_three;
+            margin-top: 10px;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding-left: 40px;
+            padding-bottom: 40px;
+        }
+        .boxsOne {
+            display: flex;
+            .box:nth-child(1) {
+                width: 50%;
+                height: 50vh;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms1.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: border-box;
+            }
+            .box:nth-child(2) {
+                width: 50%;
+                height: 50vh;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms2.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: border-box;
+            }
+        }
+        .boxsTwo {
+            display: flex;
+            .box:nth-child(1) {
+                width: 50%;
+                height: 50vh;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms3.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: border-box;
+            }
+            .box:nth-child(2) {
+                width: 50%;
+                height: 50vh;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms4.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: border-box;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .room {
+        .gallery {
+            .boxsOne {
+                flex-direction: column;
+                .box:nth-child(1) {
+                    width: 100%;
+                }
+                .box:nth-child(2) {
+                    width: 100%;
+                }
+            }
+            .boxsTwo {
+                flex-direction: column;
+                .box:nth-child(1) {
+                    width: 100%;
+                }
+                .box:nth-child(2) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

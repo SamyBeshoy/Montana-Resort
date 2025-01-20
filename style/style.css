@@ -1,0 +1,609 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  animation: animation_for_body 0.75s;
+}
+
+::-moz-selection {
+  color: white;
+  background: #444444;
+}
+
+::selection {
+  color: white;
+  background: #444444;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@keyframes animation_for_body {
+  from {
+    opacity: 0;
+    transform: translatey(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0px);
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media (max-width: 350px) {
+  html {
+    font-size: 10px;
+  }
+}
+section {
+  padding: 60px 0;
+}
+
+.landing {
+  height: 100vh;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  animation-name: changeBackground;
+  animation-duration: 22s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  color: white;
+}
+.landing nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 70px;
+}
+.landing nav .boxOne {
+  font-weight: bold;
+  display: flex;
+  gap: 20px;
+  font-size: 1em;
+}
+.landing nav .boxOne span {
+  display: inline-block;
+}
+.landing nav .boxOne span a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 0;
+}
+.landing nav .boxOne .menu {
+  position: relative;
+}
+.landing nav .boxOne .menu div {
+  display: none;
+}
+.landing nav .boxOne .menu:hover div {
+  position: absolute;
+  top: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  width: 200px;
+}
+.landing nav .boxOne .menu:hover div span {
+  padding: 10px;
+}
+.landing nav .boxOne .menu:hover div span a {
+  color: black;
+}
+.landing nav a {
+  text-decoration: none;
+}
+.landing nav .boxTwo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1em;
+}
+.landing nav .boxTwo i {
+  color: #A8A7A0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.landing nav .boxTwo i:hover {
+  color: white;
+}
+.landing nav .boxTwo div {
+  cursor: pointer;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  padding: 10px 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  transition: 0.5s;
+  border: 1px solid #000000;
+}
+.landing nav .boxTwo div:hover {
+  background-color: transparent;
+}
+.landing nav .sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 156;
+  background-color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.landing nav .sidenav .parent {
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.landing nav .sidenav .parent .ch1 {
+  display: flex;
+  align-items: center;
+}
+.landing nav .sidenav .parent .ch1 img {
+  margin-right: 10px;
+}
+.landing nav .sidenav .parent .ch2 .closebtn {
+  font-size: 2.1875em;
+  color: rgb(255, 255, 255);
+}
+.landing nav .sidenav div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.landing nav .sidenav div:nth-child(2) a {
+  text-decoration: none;
+  font-size: 1.25em;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.landing nav .sidenav div:nth-child(2) a:hover {
+  color: white;
+}
+.landing nav .boxThree .tog {
+  font-size: 1.5625em;
+  color: #ffffff;
+  cursor: pointer;
+}
+.landing nav .popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  width: 30em;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  border: 1px solid black;
+  z-index: 9999999;
+}
+.landing nav .popup .formtext {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.25em;
+}
+.landing nav .popup form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1em;
+}
+.landing nav .popup form div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.landing nav .popup form span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.landing nav .popup form span .submit {
+  cursor: pointer;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  padding: 10px 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  transition: 0.5s;
+  border: 1px solid #000000;
+}
+.landing nav .popup form span .submit:hover {
+  background-color: transparent;
+  color: black;
+}
+.landing nav .popup form input {
+  width: 200px;
+  padding: 10px;
+}
+.landing .text {
+  height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.landing .text div:nth-child(1) {
+  font-size: 4em;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 3px;
+}
+.landing .text div:nth-child(2) {
+  font-size: 1.25em;
+}
+
+@keyframes changeBackground {
+  0%, 40% {
+    background-image: url(../imgs/banner.png);
+  }
+  45%, 85% {
+    background-image: url(../imgs/banner2.png);
+  }
+  90%, 100% {
+    background-image: url(../imgs/banner.png);
+  }
+}
+@media (max-width: 900px) {
+  .landing nav .boxOne,
+  .landing nav .boxTwo {
+    display: none;
+  }
+}
+@media (min-width: 901px) {
+  .landing nav .boxThree {
+    display: none;
+  }
+}
+.about .container .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about .container .box .text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1em;
+}
+.about .container .box .text div:nth-child(1) {
+  color: #009DFF;
+}
+.about .container .box .text div:nth-child(2) {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.875em;
+}
+.about .container .box .text div:nth-child(3) {
+  color: #4D4D4D;
+  line-height: 28px;
+}
+.about .container .box .photos {
+  display: flex;
+  gap: 10px;
+}
+.about .container .box .photos img {
+  width: 15.625em;
+}
+.about .container .box .photos div:nth-child(2) {
+  position: relative;
+  top: 30px;
+}
+
+@media (max-width: 1000px) {
+  .about .container .box {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+@media (max-width: 550px) {
+  .about .container .box .photos img {
+    width: 10em;
+  }
+}
+.offers .container .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.offers .container .text div:nth-child(1) {
+  color: #009DFF;
+  font-size: 1em;
+}
+.offers .container .text div:nth-child(2) {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.875em;
+}
+.offers .container .boxs {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.offers .container .boxs .box div:nth-child(1) {
+  width: 20em;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.offers .container .boxs .box div:nth-child(1) img {
+  width: 100%;
+  transition: 0.3s;
+}
+.offers .container .boxs .box div:nth-child(1) img:hover {
+  transform: scale(1.1);
+}
+.offers .container .boxs .box div:nth-child(2) {
+  font-size: 1.5625em;
+  margin-bottom: 10px;
+}
+.offers .container .boxs .box div:nth-child(3) {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #4D4D4D;
+}
+
+.ads {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/video.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  color: white;
+  padding: 100px 0;
+}
+.ads .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.ads .container div:nth-child(1) {
+  font-size: 1em;
+}
+.ads .container div:nth-child(2) {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.875em;
+}
+
+.food .container .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.food .container .box .text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1em;
+}
+.food .container .box .text div:nth-child(1) {
+  color: #009DFF;
+}
+.food .container .box .text div:nth-child(2) {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.875em;
+}
+.food .container .box .text div:nth-child(3) {
+  color: #4D4D4D;
+  line-height: 28px;
+}
+.food .container .box .photos {
+  display: flex;
+  gap: 10px;
+}
+.food .container .box .photos img {
+  width: 15.625em;
+}
+.food .container .box .photos div:nth-child(2) {
+  position: relative;
+  top: 30px;
+}
+
+@media (max-width: 1000px) {
+  .food .container .box {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+}
+@media (max-width: 550px) {
+  .food .container .box .photos img {
+    width: 10em;
+  }
+}
+.room {
+  padding-bottom: 0;
+}
+.room .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.room .text div:nth-child(1) {
+  color: #009DFF;
+  font-size: 1em;
+}
+.room .text div:nth-child(2) {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.875em;
+}
+.room .gallery {
+  background-color: antiquewhite;
+  color: white;
+  font-size: 1em;
+}
+.room .gallery .big_text {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.875em;
+  margin-top: 10px;
+}
+.room .gallery .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-left: 40px;
+  padding-bottom: 40px;
+}
+.room .gallery .boxsOne {
+  display: flex;
+}
+.room .gallery .boxsOne .box:nth-child(1) {
+  width: 50%;
+  height: 50vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+}
+.room .gallery .boxsOne .box:nth-child(2) {
+  width: 50%;
+  height: 50vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+}
+.room .gallery .boxsTwo {
+  display: flex;
+}
+.room .gallery .boxsTwo .box:nth-child(1) {
+  width: 50%;
+  height: 50vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms3.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+}
+.room .gallery .boxsTwo .box:nth-child(2) {
+  width: 50%;
+  height: 50vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/rooms4.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+}
+
+@media (max-width: 767px) {
+  .room .gallery .boxsOne {
+    flex-direction: column;
+  }
+  .room .gallery .boxsOne .box:nth-child(1) {
+    width: 100%;
+  }
+  .room .gallery .boxsOne .box:nth-child(2) {
+    width: 100%;
+  }
+  .room .gallery .boxsTwo {
+    flex-direction: column;
+  }
+  .room .gallery .boxsTwo .box:nth-child(1) {
+    width: 100%;
+  }
+  .room .gallery .boxsTwo .box:nth-child(2) {
+    width: 100%;
+  }
+}
+.reservation .container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border: 1px solid black;
+}
+.reservation .container div span {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5625em;
+}
+.reservation .container div a {
+  font-size: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  padding: 10px 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  transition: 0.5s;
+  border: 1px solid #000000;
+}
+.reservation .container div a:hover {
+  background-color: transparent;
+  color: black;
+}
+
+@media (max-width: 770px) {
+  .reservation .container div {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+footer {
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 30px 0;
+  font-size: 1em;
+}/*# sourceMappingURL=style.css.map */

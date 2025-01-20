@@ -1,0 +1,248 @@
+// import variables file
+@use "variables" as *;
+.landing {
+    height: 100vh;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    animation-name: changeBackground;
+    animation-duration: 22s; 
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out; 
+    animation-iteration-count: infinite;
+    color: white;
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+        padding: 70px;
+        .boxOne {
+            font-weight: bold;
+            display: flex;
+            gap: 20px;
+            font-size: $font_six;
+            span {
+                display: inline-block;
+                a {
+                    text-decoration: none;
+                    color: white;
+                    padding: 10px 0;
+                }
+            }
+            .menu {
+                position: relative;
+                div {
+                    display: none;
+                }
+                &:hover div {
+                    position: absolute;
+                    top: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: rgb(255, 255, 255);
+                    width: 200px;
+                    span {
+                        a {
+                            color: black;
+                        }
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+        .boxTwo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: $font_six;
+            i {
+                color: #A8A7A0;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover {
+                    color: white;
+                }
+            }
+            div {
+                &:hover {
+                    background-color: transparent;
+                }
+                cursor: pointer;
+                font-size: 1em;
+                color: rgb(255, 255, 255);
+                background-color: #000000;
+                padding: 10px 20px;
+                width: fit-content;
+                border-radius: 20px;
+                transition: 0.5s;
+                border: 1px solid #000000;
+            }
+        }
+        .sidenav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            z-index: 156;
+            background-color: #000000;
+            overflow: hidden;
+            transition: .5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .parent {
+                padding: 20px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .ch1 {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+                .ch2 {
+                    .closebtn {
+                        font-size: $font_two;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+            div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                a {
+                    text-decoration: none;
+                    font-size: $font_five;
+                    color: #818181;
+                    display: block;
+                    transition: 0.3s;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }       
+        .boxThree {
+            .tog {
+                font-size: $font_four;
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            width: 30em;
+            min-height: fit-content;
+            border: 1px solid black;
+            z-index: 9999999;
+            .formtext {
+                text-align: center;
+                padding: 20px;
+                font-size: $font_five;
+            }
+            form {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                font-size: $font_six;
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                span {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    .submit {
+                        &:hover {
+                            background-color: transparent;
+                            color: black;
+                        }
+                        cursor: pointer;
+                        font-size: 1em;
+                        color: rgb(255, 255, 255);
+                        background-color: #000000;
+                        padding: 10px 20px;
+                        width: fit-content;
+                        border-radius: 20px;
+                        transition: 0.5s;
+                        border: 1px solid #000000;
+                    }
+                }
+                input {
+                    width: 200px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    .text {
+        height: calc(100vh - 140px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        div:nth-child(1) {
+            font-size: $font_one;
+            font-family: "Raleway", sans-serif;
+            letter-spacing: 3px;
+        }
+        div:nth-child(2) {
+            font-size: $font_five;
+        }
+    }
+}
+@keyframes changeBackground {
+    0%, 40% { 
+        background-image: url(../imgs/banner.png);
+    }
+    45%, 85% { 
+        background-image: url(../imgs/banner2.png);
+    }
+    90%, 100% { 
+        background-image: url(../imgs/banner.png);
+    }
+}
+@media (max-width: 900px) {
+    .landing {
+        nav {
+            .boxOne, 
+            .boxTwo {
+                display: none;
+            }
+        }
+    }
+}
+@media (min-width: 901px) {
+    .landing {
+        nav {
+            .boxThree {
+                display: none;
+            }
+        }
+    }
+}

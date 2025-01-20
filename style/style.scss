@@ -1,0 +1,29 @@
+// import global file
+@use "global" as *; 
+
+// import variables file
+@use "variables" as *; 
+
+// import landing file
+@use "landing" as *; 
+
+// import about file
+@use "about" as *; 
+
+// import offers file
+@use "offers" as *; 
+
+// import ads file
+@use "ads" as *; 
+
+// import food file
+@use "food" as *; 
+
+// import room file
+@use "room" as *; 
+
+// import reservation file
+@use "reservation" as *; 
+
+// import footer file
+@use "footer" as *; 
